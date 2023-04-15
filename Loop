@@ -1,0 +1,20 @@
+stock_prices = [10, 7, 5, 8, 11, 9]
+
+# initialize minimum price to the first element of the list
+min_price = stock_prices[0]
+
+# initialize maximum profit to 0
+max_profit = 0
+
+# iterate over the list of prices starting from the second element
+for price in stock_prices[1:]:
+    # update the minimum price seen so far
+    min_price = min(min_price, price)
+    
+    # calculate the maximum profit that can be made by selling at the current price
+    current_profit = price - min_price
+    
+    # update the maximum profit seen so far
+    max_profit = max(max_profit, current_profit)
+
+print(max_profit)
